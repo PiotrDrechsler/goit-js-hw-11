@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+}
+
+
+/* S E A R C H  B A R */
+form {
+    background-color: #277BC0;
+    height: 60px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 25px;
+    min-width: 500px;    
+    border-radius: 0%;
+    border: none;
+    padding: 5px;
+}
+
+input:focus{
+    outline: none;
+}
+
+#search-button {
+    height: 35px;
+    width: 35px;
+    background-color: #e2e2e2;
+    border: none;
+    cursor: pointer;  
+}
+
+/* G A L L E R Y */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+
+.gallery__item {
+    flex-grow: 1;
+    flex-basis: 125px;
+    max-width: 300px;
+    margin: 5px;
+   
+}
+
+.gallery__image {
+    max-width: 100%;
+    max-height: 250px;
+    margin: 0 auto;
+}
+
+.info {
+   display: flex;
+   justify-content: space-around
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
