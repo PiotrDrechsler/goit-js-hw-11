@@ -60,6 +60,7 @@ input:hover {
     transition: all .2s ease-in-out;
     display: flex;
     overflow: hidden;
+    opacity: 0.9;
     
 }
 
@@ -67,24 +68,24 @@ input:hover {
 .photo-card:focus {
     transform: scale(1.01);
     box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    background-color: rgba(39,123,192);
 }
 
 img {
-    opacity: 0.9;
+
     height: 30vh;
     width: 100%;
     object-fit: cover;
     display: block;
 }
-
-img:hover,
-img:focus {
-    opacity: 1;
-}
     
 .info {
     justify-content: space-around;
     display: flex;
+    background-color: rgba(39,123,192, 0.5);
+    color: #f6f6f6;
+    cursor: pointer;
 }
 
 .info-item {
