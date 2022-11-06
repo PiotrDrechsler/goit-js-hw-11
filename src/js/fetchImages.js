@@ -42,3 +42,4 @@ async function fetchImages(inputValue, page) {
 };
 
 export { fetchImages };
+
