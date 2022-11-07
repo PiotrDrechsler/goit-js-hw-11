@@ -5,7 +5,6 @@ import { Loading } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-
 const input = document.querySelector('#search-form input');
 const searchBtn = document.querySelector('#search-button');
 const loadMoreBtn = document.querySelector('.load-more');
@@ -32,6 +31,10 @@ const search = () => {
 
         loadMoreBtn.style.display = 'block';
 
+        if (page !== 1) {
+          smoothScroll();
+        }
+
         const totalPages = Math.ceil(images.totalHits / 40);
 
         if (page === totalPages) {
@@ -48,16 +51,38 @@ const search = () => {
       });
     };
 
+//load more
+function loadMore() {
+  page += 1;
+  search();
+}
 
 //event listeners
+//serch button
 searchBtn.addEventListener('click', () => {
     event.preventDefault();
   
     //check length
     if (input.value.trim().length >= 1) {
+      page = 1;
       gallery.innerHTML = '';
       search();
     } else {
       Notify.failure('Please enter something.');
     }
 })
+
+//load more button
+loadMoreBtn.addEventListener(`click`, loadMore);
+
+//smooth scroll
+function smoothScroll() {
+  const { height: cardHeight } = document
+    .querySelector(".gallery")
+   .firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+   top: cardHeight * 2,
+   behavior: "smooth",
+  });
+}

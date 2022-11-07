@@ -117,7 +117,7 @@ img {
 } 
 
 .load-more:hover,
-.load-more:focus {
+.load-more:focus-visible {
     opacity: 1;
     background-color: rgba(165,114,65);
     transform: scale(1.1);

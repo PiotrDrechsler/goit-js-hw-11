@@ -29,11 +29,11 @@ async function fetchImages(inputValue, page) {
         };
         
         //show results
-        if (response.data.total > 0)
+        if (response.data.total > 0 && page === 1)
             Notify.success(
                 `Hooray! We found ${response.data.total} images.`
             );
-        console.log('Fetch successful!', response.data);
+        console.log('Fetch successful!', `Value is: "`,inputValue,`" on page:`, page, response.data,);
         return response.data;
        
     } catch (error) {
@@ -42,4 +42,3 @@ async function fetchImages(inputValue, page) {
 };
 
 export { fetchImages };
-
